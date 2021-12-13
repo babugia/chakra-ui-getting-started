@@ -53,7 +53,7 @@ const Details = () => {
           <Checkbox defaultChecked>Ship to the billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button size="lg" w="full" bgColor="#8AC919" color="white">Place order</Button>
+          <Button colorScheme="brand" size="lg" w="full">Place order</Button>
         </GridItem>
       </SimpleGrid>
     </VStack>

@@ -1,5 +1,5 @@
 import { Container, Flex } from '@chakra-ui/react';
-import { Cart, Details } from './src/sections';
+import { Cart, Details } from '../src/sections';
 
 const IndexPage = () => {
   // The array syntax map through default theme / breakpoints
