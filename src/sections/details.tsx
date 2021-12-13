@@ -1,19 +1,28 @@
-import { FormControl, FormLabel, Input, VStack, Heading, Text, SimpleGrid, GridItem, Select, Checkbox, Button, useBreakpointValue } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  VStack,
+  Heading,
+  Text,
+  SimpleGrid,
+  GridItem,
+  Select,
+  Checkbox,
+  Button,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 const Details = () => {
   const colSpan = useBreakpointValue({ base: 2, md: 1 });
 
-
-  // if you want px, divide by 4, e.g: 12 px spacing, so spacing will be 3.
-  // TODO finalize layout - https://www.figma.com/file/vOcnzw9yT05grSCD1ji7ax/egghead.io---Introduction-to-Chakra-UI?node-id=802%3A9205
   return (
     <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start">
       <VStack spacing={3} alignItems="flex-start">
         <Heading size="2xl">Your details</Heading>
         <Text>If you already have an account, click here to log in.</Text>
       </VStack>
-
-      <SimpleGrid columns={2} columnGap={3} rowGap={6}>
+      <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
         <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>First Name</FormLabel>
@@ -26,7 +35,7 @@ const Details = () => {
             <Input placeholder="Doe" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={colSpan}>
+        <GridItem colSpan={2}>
           <FormControl>
             <FormLabel>Address</FormLabel>
             <Input placeholder="Blvd. Broken Dreams 21" />
@@ -42,22 +51,24 @@ const Details = () => {
           <FormControl>
             <FormLabel>Country</FormLabel>
             <Select>
-              <option value='usa'>United States of America</option>
-              <option value='uae'>United Arab Emirates</option>
-              <option value='nmk'>North Macedonia</option>
-              <option value='de'>Germany</option>
+              <option value="usa">United States of America</option>
+              <option value="uae">United Arab Emirates</option>
+              <option value="nmk">North Macedonia</option>
+              <option value="de">Germany</option>
             </Select>
           </FormControl>
         </GridItem>
         <GridItem colSpan={2}>
-          <Checkbox defaultChecked>Ship to the billing address.</Checkbox>
+          <Checkbox defaultChecked>Ship to billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button colorScheme="brand" size="lg" w="full">Place order</Button>
+          <Button variant="primary" size="lg" w="full">
+            Place order
+          </Button>
         </GridItem>
       </SimpleGrid>
     </VStack>
-  )
-}
+  );
+};
 
 export default Details;
