@@ -1,6 +1,8 @@
-import { FormControl, FormLabel, Input, VStack, Heading, Text, SimpleGrid, GridItem, Select, Checkbox, Button } from '@chakra-ui/react';
+import { FormControl, FormLabel, Input, VStack, Heading, Text, SimpleGrid, GridItem, Select, Checkbox, Button, useBreakpointValue } from '@chakra-ui/react';
 
 const Details = () => {
+  const colSpan = useBreakpointValue({ base: 2, md: 1 });
+
 
   // if you want px, divide by 4, e.g: 12 px spacing, so spacing will be 3.
   // TODO finalize layout - https://www.figma.com/file/vOcnzw9yT05grSCD1ji7ax/egghead.io---Introduction-to-Chakra-UI?node-id=802%3A9205
@@ -12,31 +14,31 @@ const Details = () => {
       </VStack>
 
       <SimpleGrid columns={2} columnGap={3} rowGap={6}>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>First Name</FormLabel>
             <Input placeholder="John" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Last Name</FormLabel>
             <Input placeholder="Doe" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={2}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Address</FormLabel>
             <Input placeholder="Blvd. Broken Dreams 21" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>City</FormLabel>
             <Input placeholder="San Francisco" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Country</FormLabel>
             <Select>
